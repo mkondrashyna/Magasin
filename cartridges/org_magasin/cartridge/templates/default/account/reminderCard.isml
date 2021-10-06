@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header clearfix">
+        <h2 class="pull-left">${Resource.msg('label.reminder','account',null)}</h2>
+    </div>
+    <isif condition="${pdict.reminderItems}">
+        <isloop items="${pdict.reminderItems}" var="reminderItem">
+            <div class="row">
+                <div class="col-md-3">${reminderItem.name}</div>
+                <div class="col-md-3">${reminderItem.date}</div>
+                <div class="col-md-3">${reminderItem.alert} / ${reminderItem.repied}</div>
+                <div class="col-md-3">
+                    <a href="${URLUtils.https('Reminder-Add', 'uuid', reminderItem.uuid)}" >${Resource.msg('label.reminder.edit','account',null)}</a>
+                    <a href="${URLUtils.https('Reminder-Remove', 'uuid', reminderItem.uuid)}" >${Resource.msg('label.reminder.delete','account',null)}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">${reminderItem.message}</div>
+            </div>
+            <hr/>
+        </isloop>
+    </isif>
+
+    <div class="card-footer card-footer-border text-center">
+        <a href="${URLUtils.url('Reminder-Add')}" class="card-link" aria-label="${Resource.msg('label.payment.addnewreminder','account',null)}">${Resource.msg('link.addnew','account',null)}</a>
+    </div>
+</div>

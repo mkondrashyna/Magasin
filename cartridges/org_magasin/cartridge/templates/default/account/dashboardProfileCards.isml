@@ -20,5 +20,7 @@
         <!---Payment--->
         <isinclude template="account/paymentCard"/>
 
+        <iscomment> Birthday Reminder </iscomment>
+        <isinclude template="account/reminderCard"/>
     </div>
 </div>
